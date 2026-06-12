@@ -1,0 +1,45 @@
+
+py -3.12 -m venv venv
+
+
+.\venv\Scripts\activate
+
+
+pip install --no-cache-dir fastapi uvicorn pydantic scikit-learn numpy
+
+
+uvicorn main:app --reload 
+
+examples:
+
+{
+  "features": {
+    "identity_verified": true,
+    "insurance_type": "Government",
+    "insurance_valid": true,
+    "vital_status": "Normal",
+    "vital_risk_score": 1.2,
+    "fracture_detected": false,
+    "fracture_region": "None",
+    "mura_abnormal": false,
+    "chest_disease_detected": false,
+    "chest_disease_type": "None"
+  }
+}
+
+
+
+{
+  "features": {
+    "identity_verified": true,
+    "insurance_type": "Private",
+    "insurance_valid": true,
+    "vital_status": "Critical",
+    "vital_risk_score": 8.5,
+    "fracture_detected": true,
+    "fracture_region": "Forearm",
+    "mura_abnormal": true,
+    "chest_disease_detected": true,
+    "chest_disease_type": "Effusion"
+  }
+}
